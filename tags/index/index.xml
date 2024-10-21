@@ -7,10 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Bruce Zhou</copyright>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://zhoujb22.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Database Command 1</title>
+      <link>https://zhoujb22.github.io/2024/10/database/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2024/10/database/</guid>
+      <description>&lt;h2 id=&#34;连接数据库&#34;&gt;连接数据库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;/c database_name
+
+pqsl -h -p -U name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建数据库&#34;&gt;创建数据库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;CREATE DATABASE
+# 非常危险的命令行
+DROP DATABASE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建table&#34;&gt;创建table&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;CREATE TABLE name (
+Column_name data_name constraints if any
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;查看创建表格的基本信息&#34;&gt;查看创建表格的基本信息&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/3797c539861dd528a6fa10864e53d0c9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;插入选择数据&#34;&gt;插入/选择数据：&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/f84ce471ff4b67fc8ad46e566b178ae4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查看table内容&#34;&gt;查看Table内容&lt;/h2&gt;
+&lt;h2 id=&#34;表格排序取unique值匹配符合条件布尔值&#34;&gt;表格排序、取unique值、匹配符合条件、布尔值&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/78a8e32d04816f2b863c9099b1f35898.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;展示有限行&#34;&gt;展示有限行&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/6e74de7df3a28282f0b03056850b6b11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;模式匹配分组函数筛选&#34;&gt;模式匹配、分组、函数、筛选&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/5acaceecea3dcedb9901b4999a19b8e3.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/3823fac4613ae67ac27adfc0d07d3355.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/639b1b2d6041aeee41ea66340941f585.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最大最小平均近似函数&#34;&gt;最大、最小、平均、近似函数&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/a0b6a0a09d2e9afa2544bd65c19ccf45.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;处理空值null&#34;&gt;处理空值（NULL）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/402d1e1ac463af166c385adba0537247.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;避免计算错误&#34;&gt;避免计算错误&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/83a4b2f676e295af2fc8231bc807e1d5.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/46a8ca2a064ff008c7eb4203de8fcd52.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/d61fd44adf54d4c7cce5a892bedf8f8f.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;时间处理&#34;&gt;时间处理&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/f48aafde9e252a1154126f7e21f3b44b.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除限制条件&#34;&gt;删除限制条件&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/5b6a3cdf1fc95d421ceaf2e2f89bb853.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除表格行增加限制条件&#34;&gt;删除表格行、增加限制条件&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/0ca1f21d0667a8e11daa84b83c105b08.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/f1e72063fc6d340b94455b27d4406f74.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE person DROP CONSTRAINT unique_email_address UNIQUE(email);
+\d person
+ALTER TABLE person ADD UNIQUE(email);
+\d person
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DELETE FROM person;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;更新table数据&#34;&gt;更新Table数据&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/b5ca6835144cff670b3c34c0e1dcd401.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Markdown Syntax Guide</title>

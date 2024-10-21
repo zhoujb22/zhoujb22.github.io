@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://zhoujb22.github.io/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/2024/10/database/</loc>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/index/</loc>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/posts/</loc>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/quant-skills/</loc>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/</loc>
+    <lastmod>2024-10-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,13 +66,6 @@
   </url>
   
   <url>
-    <loc>https://zhoujb22.github.io/tags/index/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zhoujb22.github.io/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -52,13 +80,6 @@
   </url>
   
   <url>
-    <loc>https://zhoujb22.github.io/posts/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zhoujb22.github.io/series/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -67,13 +88,6 @@
   
   <url>
     <loc>https://zhoujb22.github.io/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhoujb22.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
