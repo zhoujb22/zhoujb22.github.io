@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privacy on Bruce&#39;s Blog</title>
+    <link>https://zhoujb22.github.io/tags/privacy/</link>
+    <description>Recent content in Privacy on Bruce&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Bruce Zhou</copyright>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://zhoujb22.github.io/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Minimum spanning tree 2</title>
+      <link>https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;前一部分中，我们了解到了可以使用prim来构建最小生成树，为了刻画节点在整个树中是否处于中心位置，有许多衡量这一位置的指标，但本文中我们可以采用测量某一节点到所有其他节点的沿最小生成树路径的总距离。本文引入算法来实现高效计算这一距离（实际上是接近中心度的中间过程）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimum spanning tree 1</title>
+      <link>https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
+      <description>&lt;h2 id=&#34;常见的基于股价变化构建网络的方式&#34;&gt;常见的基于股价变化构建网络的方式&lt;/h2&gt;
+&lt;p&gt;Mantegna 最早将复杂网络研究方法引入股票市场，Barabasi 在 2003 年的研究中证实美国股票市场满足无标度网络性质。在国内股票市场的研究中，Huang 在 2009 年的研究中证实沪深 1080 只股票满足幂律分布，Mai 在 2014年的复杂网络系统研究表明沪深 300 的核心行业为工业，谢凌峰和陈志 2016 年的研究中表明在沪港通开通后网络的平均度和聚类系数都有了显著的上升。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Database Command 1</title>
+      <link>https://zhoujb22.github.io/2024/10/database/</link>
+      <pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2024/10/database/</guid>
+      <description>&lt;h2 id=&#34;连接数据库&#34;&gt;连接数据库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;/c database_name
+
+pqsl -h -p -U name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建数据库&#34;&gt;创建数据库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;CREATE DATABASE
+# 非常危险的命令行
+DROP DATABASE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建table&#34;&gt;创建table&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-psql&#34;&gt;CREATE TABLE name (
+Column_name data_name constraints if any
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;查看创建表格的基本信息&#34;&gt;查看创建表格的基本信息&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/3797c539861dd528a6fa10864e53d0c9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;插入选择数据&#34;&gt;插入/选择数据：&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/f84ce471ff4b67fc8ad46e566b178ae4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查看table内容&#34;&gt;查看Table内容&lt;/h2&gt;
+&lt;h2 id=&#34;表格排序取unique值匹配符合条件布尔值&#34;&gt;表格排序、取unique值、匹配符合条件、布尔值&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/78a8e32d04816f2b863c9099b1f35898.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;展示有限行&#34;&gt;展示有限行&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/6e74de7df3a28282f0b03056850b6b11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;模式匹配分组函数筛选&#34;&gt;模式匹配、分组、函数、筛选&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/5acaceecea3dcedb9901b4999a19b8e3.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/images/3823fac4613ae67ac27adfc0d07d3355.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/images/639b1b2d6041aeee41ea66340941f585.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;最大最小平均近似函数&#34;&gt;最大、最小、平均、近似函数&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/a0b6a0a09d2e9afa2544bd65c19ccf45.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;处理空值null&#34;&gt;处理空值（NULL）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/402d1e1ac463af166c385adba0537247.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;避免计算错误&#34;&gt;避免计算错误&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/83a4b2f676e295af2fc8231bc807e1d5.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/images/46a8ca2a064ff008c7eb4203de8fcd52.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/images/d61fd44adf54d4c7cce5a892bedf8f8f.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;时间处理&#34;&gt;时间处理&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/f48aafde9e252a1154126f7e21f3b44b.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除限制条件&#34;&gt;删除限制条件&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/5b6a3cdf1fc95d421ceaf2e2f89bb853.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除表格行增加限制条件&#34;&gt;删除表格行、增加限制条件&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/0ca1f21d0667a8e11daa84b83c105b08.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;https://zhoujb22.github.io/images/f1e72063fc6d340b94455b27d4406f74.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE person DROP CONSTRAINT unique_email_address UNIQUE(email);
+\d person
+ALTER TABLE person ADD UNIQUE(email);
+\d person
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DELETE FROM person;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;更新table数据&#34;&gt;更新Table数据&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://zhoujb22.github.io/images/b5ca6835144cff670b3c34c0e1dcd401.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>https://zhoujb22.github.io/2019/03/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2019/03/markdown-syntax/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://zhoujb22.github.io/2019/03/rich-content/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2019/03/rich-content/</guid>
+      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://zhoujb22.github.io/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/about/</guid>
+      <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;&gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
+&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;https://github.com/russross/blackfriday&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/muesli/smartcrop&#34;&gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

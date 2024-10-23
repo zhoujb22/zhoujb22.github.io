@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Minimum spanning tree 2 - Bruce&#39;s Blog
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="最小生成树原理与算法-2" />
+    <meta name="generator" content="Hugo 0.136.2 with theme pure" />
+    <title>Minimum spanning tree 2 - Bruce&#39;s Blog</title>
+    
+    
+    <link rel="stylesheet" href="https://zhoujb22.github.io/css/style.min.e64d754037c0ee0ec4e20ab1d6f07740ace61729bc03850559b8caa21ae4a597.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:url" content="https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/">
+  <meta property="og:site_name" content="Bruce&#39;s Blog">
+  <meta property="og:title" content="Minimum spanning tree 2">
+  <meta property="og:description" content="最小生成树原理与算法-2">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="Quant Knowledge">
+    <meta property="article:tag" content="Algorithms">
+
+  <meta itemprop="name" content="Minimum spanning tree 2">
+  <meta itemprop="description" content="最小生成树原理与算法-2">
+  <meta itemprop="datePublished" content="2024-10-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2228">
+  <meta itemprop="keywords" content="Quant Knowledge,Algorithms">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Minimum spanning tree 2">
+  <meta name="twitter:description" content="最小生成树原理与算法-2">
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/zhoujb22" target="_blank">
+            <img class="img-circle img-rotate" src="https://zhoujb22.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Jinbo Zhou</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">A Blog Space to link us</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Thank you for your attention. I will continue to update and share blog articles in different fields.~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://zhoujb22.github.io/tags/algorithms/" class="tag-list-link" rel="2">algorithms<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/css/" class="tag-list-link" rel="1">css<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/html/" class="tag-list-link" rel="1">html<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/index/" class="tag-list-link" rel="1">index<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/markdown/" class="tag-list-link" rel="1">markdown<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/privacy/" class="tag-list-link" rel="1">privacy<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/quant-knowledge/" class="tag-list-link" rel="2">quant knowledge<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/quant-skills/" class="tag-list-link" rel="1">quant skills<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/shortcodes/" class="tag-list-link" rel="1">shortcodes<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/sql/" class="tag-list-link" rel="1">sql<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/themes/" class="tag-list-link" rel="1">themes<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://zhoujb22.github.io/categories/syntax/" class="category-list-link">syntax</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://zhoujb22.github.io/categories/themes/" class="category-list-link">themes</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/algorithms/" class="tag-list-link">algorithms</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/css/" class="tag-list-link">css</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/index/" class="tag-list-link">index</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/privacy/" class="tag-list-link">privacy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/quant-knowledge/" class="tag-list-link">quant knowledge</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/quant-skills/" class="tag-list-link">quant skills</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/shortcodes/" class="tag-list-link">shortcodes</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/sql/" class="tag-list-link">sql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/themes/" class="tag-list-link">themes</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/" class="title">Minimum spanning tree 2</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-23</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95/" class="title">Minimum spanning tree 1</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/database/" class="title">Database Command 1</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2019/03/markdown-syntax/" class="title">Markdown Syntax Guide</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2019/03/rich-content/" class="title">Rich Content</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2019-03-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-03-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/"
+    >Minimum spanning tree 2</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2024-10-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-23</time>
+</a>
+</span>
+  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/quant-knowledge/"> Quant Knowledge </a>
+    <a class="article-tag-link" href="/tags/algorithms/"> Algorithms </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2228 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 5 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="引言">引言</h2>
+<p>前一部分中，我们了解到了可以使用prim来构建最小生成树，为了刻画节点在整个树中是否处于中心位置，有许多衡量这一位置的指标，但本文中我们可以采用测量某一节点到所有其他节点的沿最小生成树路径的总距离。本文引入算法来实现高效计算这一距离（实际上是接近中心度的中间过程）。</p>
+<hr>
+<p>1、度中心度
+节点度中心度，计算方法为节点的连接的边的数量除以可能的最大连接数，对于 n 个节点的网络，最大连接数为 n-1，即：</p>
+<p>$$𝑑_𝑣 = deg(v)⁄𝑚$$</p>
+<p>其中 deg 为节点 v 的连接边数量，m 为最大连接数（n-1）。</p>
+<p>2、接近中心度
+接近中心度衡量了节点与其他节点的距离，计算方法为加总节点到其他所有节点的最短距离，接近中心度也通过最大连接距离进行归一化，即：</p>
+<p>$$𝑐_𝑣 = （n − 1)⁄𝑑$$</p>
+<p>其中 d 为节点与其他节点连接距离的加总。</p>
+<p>3、中介中心度
+中介中心度衡量了，节点位于其他节点的最短路径上的程度，即：</p>
+<p>$$b_v = \sum_{s,t} \frac{\sigma(s,t|v)}{\sigma(s,t)}$$</p>
+<p>𝜎(𝑠,𝑡)为节点 s，t 的最短路径的数量，𝜎(𝑠,𝑡|𝑣)为 s 和 t 最短路径经过节点 v 的数量。</p>
+<p>&ndash;来源：《股票网络中心度因子异象研究&ndash;by华创证券》</p>
+<hr>
+<p>示例：</p>
+<ul>
+<li>假设存在最小生成树: (7, &lsquo;A&rsquo;, &lsquo;B&rsquo;)，(5, &lsquo;A&rsquo;, &lsquo;D&rsquo;)， (8, &lsquo;A&rsquo;, &lsquo;C&rsquo;)
+<ul>
+<li>对于A，距离和为<code>7+5+8=20</code>;</li>
+<li>对于B，距离和为B到A、C、D的距离和，为<code>7+(7+5)+(7+8)=34</code>;</li>
+<li>对于C，距离和为C到A、B、D的距离和，为<code>8+(8+5)+(8+7)=36</code>；</li>
+</ul>
+</li>
+</ul>
+<p>观察可以发现，在该树中，A处于中心位置，其到所有其他节点的沿最小生成树路径的总距离最小，而边缘位置的节点，该数值越大；想象节点为单支股票，衡量股票是否处于同类股票的中心位置，有助于确定股票在同一行业中的“重要程度”。</p>
+<h2 id="为dijkstra算法构建graph">为Dijkstra算法构建graph</h2>
+<pre><code class="language-python"># 构建图的邻接表
+def build_graph(result):
+    graph = defaultdict(list)
+    for distance, node1, node2 in result:
+        graph[node1].append((distance, node2))
+        graph[node2].append((distance, node1))
+    return graph
+</code></pre>
+<h2 id="dijkstra算法-计算某个节点到其他所有节点的最短距离和">Dijkstra算法: 计算某个节点到其他所有节点的最短距离和</h2>
+<pre><code class="language-python"># Dijkstra算法,计算某个节点到其他所有节点的最短距离和
+def dijkstra(graph, start):
+	# 初始化距离字典
+    distances = {node: float(&quot;inf&quot;) for node in graph}
+    distances[start] = 0
+    priority_queue = [(0, start)]
+
+    while priority_queue:
+        current_distance, current_node = heapq.heappop(priority_queue)
+
+        # 如果从队列取出的距离大于当前节点已知的最短距离,则跳过
+        if current_distance &gt; distances[current_node]:
+            continue
+
+        # 更新相邻节点的最短距离
+        for neighbor_distance, neighbor in graph[current_node]:
+            distance = current_distance + neighbor_distance
+
+            if distance &lt; distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(priority_queue, (distance, neighbor))
+
+    # 返回从起点到所有其他节点的距离和
+    return sum(distances.values())
+</code></pre>
+<p>注：</p>
+<ul>
+<li>在 Python 中，当你对字典（<code>dict</code>）直接使用 <code>for</code> 循环时，<code>for node in graph</code> 会遍历字典的键（keys）。换句话说，<code>node</code> 代表的是字典中每个键的值，而不是字典的值（values）。</li>
+<li>在 Python 中，空列表 <code>[]</code> 被视为 <code>False</code>。在循环条件中，只有当条件为 <code>True</code> 时，循环才会执行。</li>
+</ul>
+<h3 id="算法原理">算法原理</h3>
+<p><strong>Dijkstra算法</strong>，用于计算从起点 <code>start</code> 到图 <code>graph</code> 中所有其他节点的最短路径。具体工作流程如下：</p>
+<ol>
+<li>
+<p><strong>初始化</strong>:</p>
+<ul>
+<li>定义一个字典 <code>distances</code> 来存储从起点 <code>start</code> 到每个节点的最短距离。初始化时，起点到自己的距离为 0，其余所有节点的距离设为无穷大（<code>float(&quot;inf&quot;)</code>）。</li>
+<li>使用优先队列 <code>priority_queue</code>（小顶堆），将起点 <code>start</code> 放入队列，优先级为 0，表示当前已知的距离。</li>
+</ul>
+</li>
+<li>
+<p><strong>处理队列中的节点</strong>：</p>
+<ul>
+<li>第一轮，通过 <code>heapq.heappop</code> 从优先队列中取出具有最小距离的节点 <code>current_node</code> 和对应的距离 <code>current_distance</code>。此时取出来的节点是<code>start</code>，由于<code>0=0</code>，所以不跳过下一回合；</li>
+<li>对于<code>graph</code>中<code>start</code>的节点，遍历与<code>start</code>有距离数据的节点，这些新节点与<code>start</code>的距离是<code>0+neighbor_distance</code>，由于<code>distances[neighbor]</code>在第一轮必定是无穷大的，更新该节点在<code>distance</code>字典中的值，并将<code>(distance, neighbor)</code>压入最小堆<code>priority_queue</code>中。</li>
+<li>后续循环过程中，由于<code>if distance &lt; distances[neighbor]</code>使得新节点的搜寻不能走回头路，因为<code>distance = current_distance + neighbor_distance</code>使得如果走回头路，<code>distance</code>一定会大于在<code>distances</code>中储存的上一轮的数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>重复步骤</strong>：</p>
+<ul>
+<li>继续从优先队列中取出下一个距离最小的节点，更新其邻居的最短距离，直到优先队列为空。</li>
+</ul>
+</li>
+<li>
+<p><strong>返回结果</strong>：</p>
+<ul>
+<li>最终，算法返回从起点到所有其他节点的最短路径和 <code>sum(distances.values())</code>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="时间复杂度">时间复杂度</h3>
+<ul>
+<li>该算法使用优先队列来选择最小距离的节点，单次操作的时间复杂度为 ( O(\log V) )，其中 ( V ) 是节点的数量。对于每条边的松弛操作，时间复杂度是 ( O(E) )，因此总的时间复杂度为 ( O((V + E) \log V) )。</li>
+</ul>
+<h3 id="适用场景">适用场景</h3>
+<ul>
+<li>Dijkstra 算法通常用于加权图中找出单源最短路径，图的边权重必须为非负数。</li>
+</ul>
+<h2 id="并行执行算法">并行执行算法</h2>
+<pre><code class="language-python"># 计算每个节点的最短距离和,支持并行化
+def compute_all_shortest_path_sums(graph, n_jobs=4):
+    node_sums = Parallel(n_jobs=n_jobs)(delayed(dijkstra)(graph, node) for node in graph)
+
+    # 构建字典,将结果和节点对应起来
+    return {node: node_sum for node, node_sum in zip(graph, node_sums)}
+</code></pre>
+<h3 id="并行操作的理解">并行操作的理解：</h3>
+<ul>
+<li>
+<p><strong><code>Parallel</code> 的性质</strong>：<br>
+<code>Parallel</code> 是 <code>joblib</code> 库中的并行执行器，确保了任务的结果顺序与输入顺序相同，即使任务是并行执行的。在任务分配给多个工作线程后，<code>Parallel</code> 会根据输入顺序收集这些任务的输出结果，然后按照这个顺序将结果返回。</p>
+<p>因此使用<code>zip(graph, node_sums)</code>不会影响<code>key</code>与距离的匹配。</p>
+<p>换句话说，不管某个任务完成得早还是晚，<code>Parallel</code> 都会按提交任务时的顺序对输出结果进行排序。</p>
+</li>
+<li>
+<p><strong><code>delayed</code> 的作用</strong>：<br>
+<code>delayed</code> 只是用来延迟计算的包装器，主要是将函数调用（如 <code>dijkstra(graph, node)）</code> 转换为一个可传递给并行执行的任务对象。它的作用是封装这些函数以便传递给 <code>Parallel</code>。<br>
+然而，<code>delayed</code> 并不会决定任务返回结果的顺序，结果顺序的维护完全是 <code>Parallel</code> 内部实现的。</p>
+</li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/" title="Minimum spanning tree 2" target="_blank" rel="external">https://zhoujb22.github.io/2024/10/mini_tree%E8%8A%82%E7%82%B9%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">Bruce Zhou</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhoujb22" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://zhoujb22.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhoujb22" target="_blank"><span class="text-dark">Jinbo Zhou</span><small class="ml-1x">A Blog Space to link us</small></a></h3>
+        <div>Still Water Runs Deep~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95/" title="Minimum spanning tree 1"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter,linkedin"
+                data-mobile-sites="weibo,qq,wechat,facebook,twitter,linkedin"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/zhoujinbo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://zhoujb22.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="https://twitter.com/Bruce050125" target="_blank" title="twitter" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-twitter"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2024  -
+    2024
+    
+    </div>
+    
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('\x3Cscript src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://zhoujb22.github.io/js/application.min.e4989ab4dc212027af8773861b05b6bc333a1217f6b0a1b3377a3a3dbd454483.js"></script>
+<script src="https://zhoujb22.github.io/js/plugin.min.353ef3573cf0beb9b69d43450140ff59f497f732396f539052fc4973c6330fdb.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/zhoujb22.github.io\/',
+            CONTENT_URL: 'https:\/\/zhoujb22.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://zhoujb22.github.io/js/insight.min.716b0c6a00b68ccc31a2b65345f3412f4246ffa94a90f8e25d525528b4504f9937880692bbe619023233caba5d0a17ebe23d7cfb57cd3a88f23ea337ad5e4d00.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liZABQQKvLcdKdwk',
+        clientSecret: 'b378771d6e088f7adde390b10141d5795cc02002',
+        repo: 'Blog-Service',
+        owner: 'zhoujb22',
+        admin: ['zhoujb22'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>
