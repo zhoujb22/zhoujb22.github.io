@@ -2,7 +2,7 @@
 <html lang="en">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <title>
-        Database Command 1 - Bruce&#39;s Blog
+        Minimum spanning tree 3 - Bruce&#39;s Blog
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,9 +20,9 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="基于Postgres的基础数据库指令" />
+    <meta name="description" content="最小生成树原理与算法-3" />
     <meta name="generator" content="Hugo 0.136.2 with theme pure" />
-    <title>Database Command 1 - Bruce&#39;s Blog</title>
+    <title>Minimum spanning tree 3 - Bruce&#39;s Blog</title>
     
     
     <link rel="stylesheet" href="http://localhost:1313/css/style.min.e64d754037c0ee0ec4e20ab1d6f07740ace61729bc03850559b8caa21ae4a597.css">
@@ -30,27 +30,27 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:url" content="http://localhost:1313/2024/10/database/">
+    <meta property="og:url" content="http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/">
   <meta property="og:site_name" content="Bruce&#39;s Blog">
-  <meta property="og:title" content="Database Command 1">
-  <meta property="og:description" content="基于Postgres的基础数据库指令">
+  <meta property="og:title" content="Minimum spanning tree 3">
+  <meta property="og:description" content="最小生成树原理与算法-3">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-10-21T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-10-21T00:00:00+00:00">
-    <meta property="article:tag" content="Quant Skills">
-    <meta property="article:tag" content="SQL">
+    <meta property="article:published_time" content="2024-10-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-27T00:00:00+00:00">
+    <meta property="article:tag" content="Quant Knowledge">
+    <meta property="article:tag" content="Algorithms">
 
-  <meta itemprop="name" content="Database Command 1">
-  <meta itemprop="description" content="基于Postgres的基础数据库指令">
-  <meta itemprop="datePublished" content="2024-10-21T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-10-21T00:00:00+00:00">
-  <meta itemprop="wordCount" content="318">
-  <meta itemprop="keywords" content="Quant Skills,SQL">
+  <meta itemprop="name" content="Minimum spanning tree 3">
+  <meta itemprop="description" content="最小生成树原理与算法-3">
+  <meta itemprop="datePublished" content="2024-10-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2196">
+  <meta itemprop="keywords" content="Quant Knowledge,Algorithms">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Database Command 1">
-  <meta name="twitter:description" content="基于Postgres的基础数据库指令">
+  <meta name="twitter:title" content="Minimum spanning tree 3">
+  <meta name="twitter:description" content="最小生成树原理与算法-3">
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -371,8 +371,8 @@ function tagCloud(where, min, max) {
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2024/10/database/"
-    >Database Command 1</a
+    href="/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/"
+    >Minimum spanning tree 3</a
   >
 </h1>
 
@@ -380,15 +380,15 @@ function tagCloud(where, min, max) {
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="http://localhost:1313/2024/10/database/" class="article-date">
-  <time datetime="2024-10-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-21</time>
+<a href="http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/" class="article-date">
+  <time datetime="2024-10-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-27</time>
 </a>
 </span>
   
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/quant-skills/"> Quant Skills </a>
-    <a class="article-tag-link" href="/tags/sql/"> SQL </a>
+    <a class="article-tag-link" href="/tags/quant-knowledge/"> Quant Knowledge </a>
+    <a class="article-tag-link" href="/tags/algorithms/"> Algorithms </a>
   </span>
 
 	<span class="article-read hidden-xs">
@@ -397,93 +397,144 @@ function tagCloud(where, min, max) {
 			<span id="busuanzi_value_page_pv">0</span>
 		</span>
 	</span>
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2024/10/database/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 318 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 1 minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2196 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 5 minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h2 id="连接数据库">连接数据库</h2>
-<pre><code class="language-psql">/c database_name
+      <h2 id="前言">前言</h2>
+<p>上一节中，我们使用<code>Dijkstra</code>算法来获取最小生成树中，计算某个节点到其他所有节点的最短距离和。值得注意的是，我们必须先使用第一节中的<code>prim</code>算法或者其他近似的算法才能来进一步应用<code>Dijkstra</code>算法计算距离和。即我们不能直接使用<code>edge</code>中所有节点之间的距离构造的包含非树边的图去应用<code>Dijkstra</code>算法。</p>
+<p>我们用下面这幅最小生成树图进行<code>Dijkstra</code>算法的推演：</p>
+<p><img src="/images/cc8cb761e3302791042eed207177ee46.webp" alt=""></p>
+<h3 id="包含非树边的图应用dijkstra算法计算距离和">包含非树边的图应用Dijkstra算法计算距离和</h3>
+<p>此处“包含非树边的图”指代上图中绿色与黑色线条权重同时存在的情况。</p>
+<ol>
+<li>选取起始点D，<code>Dijkstra</code>算法第一步会更新D距离A/B/E/F点的距离到<code>distances</code>字典当中。</li>
+<li>接下来推出与D最近的点A，遍历A的邻居：首先排除回到D的可能；对于A的邻居B，距离为7，<code>distance = current_distance + neighbor_distance = 5 + 7</code>，由于<code>12&gt;9</code>，所以distance字典中的值不会被更新；</li>
+<li>……</li>
+</ol>
+<p>可以发现，如果包含非树边，<code>Dijkstra</code> 算法并没有严格沿着最小生成树路径走，而是选择了不属于最小生成树的路径。直接使用包含所有节点对间距离的完整图作为输入，<code>Dijkstra</code> 算法会尝试找到所有最短路径，但不保证路径仅沿最小生成树。因此，需先生成最小生成树或移除非树边，才能确保计算的路径和基于最小生成树。</p>
+<p>小结：<code>Dijkstra</code> 算法属于<strong>单源路径搜索</strong>（Single-Source Shortest Path, <code>SSSP</code>），指的是从一个指定的起点节点（称为“源节点”）出发，计算到图中其他所有节点的最短路径的过程。<code>Dijkstra</code> 算法专门用于在权重非负的有向图或无向图中，计算从源节点到所有可达节点的最短路径。</p>
+<h3 id="关于本节">关于本节</h3>
+<p>最小生成树已经确保了所有节点之间的连接路径权重最小，且没有任何冗余边，因此在最小生成树上从任意节点出发到其他节点的最短路径就是其唯一的路径。</p>
+<p>本节当中，我们会引入一种在最小生成树图背景下，相比<code>Dijkstra</code> 算法更高效的算法，广度优先搜索<code>BFS</code>的变种算法。</p>
+<h2 id="bfs">BFS</h2>
+<pre><code class="language-python">from collections import defaultdict, deque
+import random
 
-pqsl -h -p -U name
-</code></pre>
-<h2 id="创建数据库">创建数据库</h2>
-<pre><code class="language-psql">CREATE DATABASE
-# 非常危险的命令行
-DROP DATABASE
-</code></pre>
-<h2 id="创建table">创建table</h2>
-<pre><code class="language-psql">CREATE TABLE name (
-Column_name data_name constraints if any
-);
-</code></pre>
-<h2 id="查看创建表格的基本信息">查看创建表格的基本信息</h2>
-<p><img src="/images/3797c539861dd528a6fa10864e53d0c9.png" alt=""></p>
-<h2 id="插入选择数据">插入/选择数据：</h2>
-<p><img src="/images/f84ce471ff4b67fc8ad46e566b178ae4.png" alt=""></p>
-<h2 id="查看table内容">查看Table内容</h2>
-<h2 id="表格排序取unique值匹配符合条件布尔值">表格排序、取unique值、匹配符合条件、布尔值</h2>
-<p><img src="/images/78a8e32d04816f2b863c9099b1f35898.png" alt=""></p>
-<h2 id="展示有限行">展示有限行</h2>
-<p><img src="/images/6e74de7df3a28282f0b03056850b6b11.png" alt=""></p>
-<h2 id="模式匹配分组函数筛选">模式匹配、分组、函数、筛选</h2>
-<p><img src="/images/5acaceecea3dcedb9901b4999a19b8e3.png" alt="">
-<img src="/images/3823fac4613ae67ac27adfc0d07d3355.png" alt="">
-<img src="/images/639b1b2d6041aeee41ea66340941f585.png" alt=""></p>
-<h2 id="最大最小平均近似函数">最大、最小、平均、近似函数</h2>
-<p><img src="/images/a0b6a0a09d2e9afa2544bd65c19ccf45.png" alt=""></p>
-<h2 id="处理空值null">处理空值（NULL）</h2>
-<p><img src="/images/402d1e1ac463af166c385adba0537247.png" alt=""></p>
-<h2 id="避免计算错误">避免计算错误</h2>
-<p><img src="/images/83a4b2f676e295af2fc8231bc807e1d5.png" alt="">
-<img src="/images/46a8ca2a064ff008c7eb4203de8fcd52.png" alt="">
-<img src="/images/d61fd44adf54d4c7cce5a892bedf8f8f.png" alt=""></p>
-<h2 id="时间处理">时间处理</h2>
-<p><img src="/images/f48aafde9e252a1154126f7e21f3b44b.png" alt=""></p>
-<h2 id="删除限制条件">删除限制条件</h2>
-<p><img src="/images/5b6a3cdf1fc95d421ceaf2e2f89bb853.png" alt=""></p>
-<h2 id="删除表格行增加限制条件">删除表格行、增加限制条件</h2>
-<p><img src="/images/0ca1f21d0667a8e11daa84b83c105b08.png" alt="">
-<img src="/images/f1e72063fc6d340b94455b27d4406f74.png" alt=""></p>
-<pre><code class="language-sql">ALTER TABLE person DROP CONSTRAINT unique_email_address UNIQUE(email);
-\d person
-ALTER TABLE person ADD UNIQUE(email);
-\d person
-</code></pre>
-<pre><code class="language-sql">DELETE FROM person;
-</code></pre>
-<h2 id="更新table数据">更新Table数据</h2>
-<p><img src="/images/b5ca6835144cff670b3c34c0e1dcd401.png" alt=""></p>
-<h2 id="处理primary-key冲突">处理primary key冲突</h2>
-<pre><code class="language-sql">INSERT INTO person () VALUES () ON CONFLICT (列名) DO NOTHING; # conflict on unique column.
-</code></pre>
-<pre><code class="language-sql">INSERT INTO person () VALUES () ON CONFLICT (列名) DO UPDATING SET A=a, B=b;
-</code></pre>
-<p><img src="/images/8f14847273515c47fa016b032b56559f.png" alt="">
-<img src="/images/fff14da73b70b7919f7b62361e8c1e7f.png" alt=""><img src="/fb17cb14a79f2a722ced693e06d19f84.png" alt="">
-Inner Joins 只保留有交集的部分
-<img src="/images/7a482036ba46d62fbb5eed45448d03c2.png" alt="">
-Left Joins 保留左侧和交集部分
-<img src="/images/ae439d07e2226b36eb5ba2560ea75dc3.png" alt="">
-<img src="/images/84215b9345da302485ad7eb8f3fc81d5.png" alt="">
-Delete foreign keys
-<img src="/images/af4cb8a4235d6377814faa9fe9d0b578.png" alt="">
-<img src="/images/ff6d5b30e0d230f947f91fd4a471f24b.png" alt="">
-UUID in action
-<img src="/images/8e0ec5e32c62c6648a7cfff8b6e43bfa.png" alt=""></p>
-<pre><code class="language-sql">CREATE TABLE car1 (
-car_uid UUID NOT NULL PRIMARY KEY,
-make VARCHAR(50) NOT NULL,
-price NUMERIC(19,2) NOT NULL CHECK (price&gt;0));
+def calculate_distances_from_node(adjacency_list, start_node):
+    &quot;&quot;&quot;
+    计算从选定节点到所有其他节点的最短路径和
+    :param adjacency_list: 邻接表
+    :param start_node: 选定的节点
+    :return: 从该节点到所有节点的距离总和
+    &quot;&quot;&quot;
+    total_distance = 0
+    visited = set()
+    queue = deque([(start_node, 0)])  # 队列存储 (当前节点, 到该节点的距离)
 
-INSERT INTO car1 (car_uid, make , price) VALUES (uuid_generate_v4(), 'Benz', '10000.00');
+    while queue:
+        current_node, current_distance = queue.popleft()
+        
+        if current_node not in visited:
+            visited.add(current_node)
+            total_distance += current_distance
 
-SELECT * FROM person JOIN car USING(car_uid); // 相同列
+            # 遍历相邻节点
+            for neighbor, weight in adjacency_list[current_node]:
+                if neighbor not in visited:
+                    queue.append((neighbor, current_distance + weight))
+
+    return total_distance
+
+# 计算从选定节点到所有节点的最短距离和
+shortest_path_sum = calculate_distances_from_node(adjacency_list, selected_node)
+print(f&quot;随机选定节点: {selected_node}&quot;)
+print(f&quot;从该节点到所有节点的最短距离和: {shortest_path_sum}&quot;)
+
 </code></pre>
-<p>Output CSV
-<img src="/images/f2aaab640fb90712731a4cf6c2adea94.png" alt=""></p>
+<h3 id="分析-calculate_distances_from_node-的步骤">分析 <code>calculate_distances_from_node</code> 的步骤</h3>
+<ol>
+<li>
+<p><strong>初始化</strong>：初始化 <code>total_distance</code> 为0，并创建一个集合 <code>visited</code> 来记录已访问的节点。用双端队列 <code>queue</code> 存储起始节点和初始距离（0）。</p>
+</li>
+<li>
+<p><strong>广度优先遍历</strong>：每次从 <code>queue</code> 中取出一个节点 <code>current_node</code>，若该节点未访问，则标记为已访问并将 <code>current_distance</code> 加入 <code>total_distance</code>。</p>
+</li>
+<li>
+<p><strong>更新相邻节点</strong>：遍历当前节点 <code>current_node</code> 的所有邻接节点 <code>neighbor</code>，若邻接节点未访问，则将其加入 <code>queue</code>，并累加距离 <code>weight</code>。</p>
+</li>
+<li>
+<p><strong>结果</strong>：最终返回从 <code>start_node</code> 到所有节点的距离和 <code>total_distance</code>。</p>
+</li>
+</ol>
+<h3 id="特点">特点</h3>
+<ul>
+<li>广度优先搜索（BFS）是一种层次遍历算法，它按照层次逐层访问图中的节点。这意味着 BFS 首先访问起始节点，然后访问所有与起始节点相邻的节点，再访问这些邻居的邻居，以此类推。该方法没有使用优先队列，所以距离更新不是按照最小路径进行扩展。</li>
+<li>遍历方式类似于广度优先搜索，但在带权重的图上，该方法未必能找到真实的最短路径和，仅适用于无权图或权重较小且结构较简单的图。</li>
+<li>若图有负权边或不规则权重分布，BFS 会计算非最优路径和，因此该算法适用范围有限。</li>
+</ul>
+<h3 id="dijkstra与bfs比较">Dijkstra与BFS比较</h3>
+<table>
+  <thead>
+      <tr>
+          <th>函数</th>
+          <th>使用算法</th>
+          <th>适用图类型</th>
+          <th>是否找到最短路径和</th>
+          <th>时间复杂度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>dijkstra</code></td>
+          <td>Dijkstra 算法</td>
+          <td>任意带非负权边的图</td>
+          <td>是</td>
+          <td>$(O((V + E) \log V))$</td>
+      </tr>
+      <tr>
+          <td><code>calculate_distances_from_node</code></td>
+          <td>广度优先搜索（变种）</td>
+          <td>无权图或简单权重图</td>
+          <td>不一定</td>
+          <td>$(O(V + E))$</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="适用范围">适用范围</h4>
+<ul>
+<li><strong>Dijkstra 算法</strong>（<code>dijkstra</code> 函数）适用于带权边，能找到最短路径和，推荐用于一般的最短路径问题。</li>
+<li><strong>广度优先搜索法</strong>（<code>calculate_distances_from_node</code> 函数）更适合无权图。对于加权图，这种方法不保证找到最短路径和。</li>
+</ul>
+<h4 id="算法复杂度分析">算法复杂度分析</h4>
+<ol>
+<li>
+<p><strong>Dijkstra 算法</strong>：</p>
+<ul>
+<li><code>Dijkstra</code> 算法在普通图中的时间复杂度为 $(O(E \log V))$，其中 E 是边数，V 是节点数。</li>
+<li><code>Dijkstra</code> 使用优先队列来获取当前最短距离节点，适合有权图的最短路径计算。</li>
+<li>在最小生成树中，虽然边数减少为 (V - 1)，但它仍然需要管理优先队列来获取最短路径，导致一定的额外操作。</li>
+</ul>
+</li>
+<li>
+<p><strong>BFS 方式 (<code>calculate_distances_from_node</code>)</strong>：</p>
+<ul>
+<li>在无环的树结构中，BFS 的时间复杂度为 $(O(V + E))$。</li>
+<li>对于最小生成树来说，边数是 (V - 1)，所以其复杂度约为 (O(V))。</li>
+<li>由于最小生成树中每两个节点间有唯一路径，BFS 不需要更新距离，直接沿路径遍历即可获得最短路径。</li>
+</ul>
+</li>
+</ol>
+<h4 id="效率对比">效率对比</h4>
+<ul>
+<li><strong>优先队列管理开销</strong>：<code>Dijkstra</code> 需要维护一个优先队列，即使在最小生成树这种特殊结构中也要通过堆操作来管理节点距离。而 <code>calculate_distances_from_node</code> 仅需简单的队列，开销更低。</li>
+<li><strong>适用性</strong>：在无环的树结构中，<code>BFS</code> 能简单快速地遍历所有节点，因此在最小生成树上 <code>calculate_distances_from_node</code> 更适合，速度更快。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>在最小生成树这个特殊的情境下，我们已经有了最小权重形成的树，因此使用BFS进行一层一层的距离计算，最终会得到节点距离其他所有的节点的最小的距离和。此时<code>calculate_distances_from_node</code> 会比 <code>Dijkstra</code> 算法更高效，因为 <code>BFS</code> 的复杂度较低且无额外的优先队列开销，因此能更快计算出从起点到所有节点的最短路径和。</p>
 
     </div>
     <div class="article-footer">
@@ -491,7 +542,7 @@ SELECT * FROM person JOIN car USING(car_uid); // 相同列
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="http://localhost:1313/2024/10/database/" title="Database Command 1" target="_blank" rel="external">http://localhost:1313/2024/10/database/</a>
+      <a href="http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/" title="Minimum spanning tree 3" target="_blank" rel="external">http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License: </strong>
@@ -525,14 +576,9 @@ SELECT * FROM person JOIN car USING(car_uid); // 相同列
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="http://localhost:1313/2019/03/markdown-syntax/" title="Markdown Syntax Guide"><i
+                <a href="http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-2/" title="Minimum spanning tree 2"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="http://localhost:1313/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-1/"
-                    title="Minimum spanning tree 1"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">
