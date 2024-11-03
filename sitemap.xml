@@ -3,6 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhoujb22.github.io/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/index/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/posts/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/quant-knowledge/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/readings/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/tags/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhoujb22.github.io/2024/11/the-black-box--overview-and-theory-driven-alpha-models/</loc>
+    <lastmod>2024-11-02T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://zhoujb22.github.io/tags/algorithms/</loc>
     <lastmod>2024-10-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -10,42 +59,7 @@
   </url>
   
   <url>
-    <loc>https://zhoujb22.github.io/</loc>
-    <lastmod>2024-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhoujb22.github.io/tags/index/</loc>
-    <lastmod>2024-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/</loc>
-    <lastmod>2024-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhoujb22.github.io/posts/</loc>
-    <lastmod>2024-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhoujb22.github.io/tags/quant-knowledge/</loc>
-    <lastmod>2024-10-27T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhoujb22.github.io/tags/</loc>
     <lastmod>2024-10-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

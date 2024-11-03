@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Bruce Zhou</copyright>
-    <lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://zhoujb22.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Black Box -- Reading Notes</title>
+      <link>https://zhoujb22.github.io/2024/11/the-black-box--overview-and-theory-driven-alpha-models/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2024/11/the-black-box--overview-and-theory-driven-alpha-models/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zhou&#34;&gt;Overview 主要介绍量化交易员形成 alpha models 的想法的来源，实施的过程，以及最终形成的量化交易系统的组成成分。Overview 同时也强调了量化交易中‘人’的重要性，以及我们并不应该只关注量化系统中的 alpha models 。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Quants are perhaps not so mysterious as is generally supposed. They tend to start with ideas that any reasonable observer of the markets might also have, but rather than using anecdotal, experiential evidence&amp;ndash;or worse, simply assuming that their ideas are true&amp;ndash;quants use market data to feed a research process to determine whether their ideas in fact hold true over time. Once quants have arrived at a satisfactory strategy, they build their strategy into a quant system. These systems take the emotion out of investing and instead impose a disciplined implementation of the idea that was tested. But this should not be read minimizing the importance of human beings in the quant trading process. Quants come up with ideas, test strategies, and decide which one to use, what kinds of instruments to trade, at what speed and so on. Humans also tend to control a &amp;ldquo;panic button, &amp;quot; which allows them to reduce risk if they determine that markets are behaving in some way that is outside the scope of their models&amp;rsquo; capabilities.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Minimum spanning tree 3</title>
