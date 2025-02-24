@@ -46,7 +46,7 @@
   <meta itemprop="description" content="《寻找阿尔法——量化交易策略》 WorldQuant">
   <meta itemprop="datePublished" content="2025-01-22T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-01-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="14851">
+  <meta itemprop="wordCount" content="14826">
   <meta itemprop="keywords" content="Quant Knowledge,Readings">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="《寻找阿尔法——量化交易策略》读书笔记整理">
@@ -407,7 +407,7 @@ function tagCloud(where, min, max) {
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 14851 words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 14826 words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 30 minutes </span>
       </div>
     </div>
@@ -462,7 +462,7 @@ function tagCloud(where, min, max) {
 <li>信息比率 = 每日损益均值 / 标准差</li>
 <li>夏普比率（风险调整后收益）</li>
 <li>最大回撤幅度</li>
-<li>策略独特性（与其他信号相关性&lt;0.1）</li>
+<li>策略独特性（与其他信号相关性&lt;0.5）</li>
 </ol>
 <h3 id="回测验证要点">回测验证要点</h3>
 <ul>
@@ -509,14 +509,14 @@ function tagCloud(where, min, max) {
 </li>
 <li><strong>Alpha稳健性</strong>
 <ol>
-<li>样本内外表现一致性：样本内信息比率(IR)＞3，样本外IR＞2</li>
+<li>样本内外表现一致性：样本内信息比率与样本外相近</li>
 <li>参数鲁棒性：在主要参数区间（如半衰期20-60日）表现稳定</li>
-<li>低维护成本：年化换手率＜100倍，季度调仓次数＜5次</li>
+<li>低维护成本：如年化换手率＜100倍，季度调仓次数＜5次</li>
 <li>逻辑可解释性：因子经济学意义明确，归因分析清晰</li>
 <li>跨市场有效性：在A股、港股、美股等主要市场均有正向表现</li>
-<li>风险可控性：历史最大回撤＜15%，Calmar比率＞1.5</li>
-<li>回撤恢复能力：平均回撤修复周期＜30个交易日</li>
-<li>资金容量：单策略管理规模＞10亿RMB</li>
+<li>风险可控性：历史最大回撤＜15%，Calmar比率</li>
+<li>回撤恢复能力：平均回撤修复周期</li>
+<li>资金容量：单策略管理规模</li>
 </ol>
 </li>
 </ol>

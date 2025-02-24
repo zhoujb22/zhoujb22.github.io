@@ -68,7 +68,7 @@
 &lt;li&gt;信息比率 = 每日损益均值 / 标准差&lt;/li&gt;
 &lt;li&gt;夏普比率（风险调整后收益）&lt;/li&gt;
 &lt;li&gt;最大回撤幅度&lt;/li&gt;
-&lt;li&gt;策略独特性（与其他信号相关性&amp;lt;0.1）&lt;/li&gt;
+&lt;li&gt;策略独特性（与其他信号相关性&amp;lt;0.5）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;回测验证要点&#34;&gt;回测验证要点&lt;/h3&gt;
 &lt;ul&gt;
