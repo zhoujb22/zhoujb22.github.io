@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        《寻找阿尔法——量化交易策略》读书笔记整理 - Bruce&#39;s Blog
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="《寻找阿尔法——量化交易策略》 WorldQuant" />
+    <meta name="generator" content="Hugo 0.136.2 with theme pure" />
+    <title>《寻找阿尔法——量化交易策略》读书笔记整理 - Bruce&#39;s Blog</title>
+    
+    
+    <link rel="stylesheet" href="https://zhoujb22.github.io/css/style.min.e64d754037c0ee0ec4e20ab1d6f07740ace61729bc03850559b8caa21ae4a597.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:url" content="https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/">
+  <meta property="og:site_name" content="Bruce&#39;s Blog">
+  <meta property="og:title" content="《寻找阿尔法——量化交易策略》读书笔记整理">
+  <meta property="og:description" content="《寻找阿尔法——量化交易策略》 WorldQuant">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-22T00:00:00+00:00">
+    <meta property="article:tag" content="Quant Knowledge">
+    <meta property="article:tag" content="Readings">
+
+  <meta itemprop="name" content="《寻找阿尔法——量化交易策略》读书笔记整理">
+  <meta itemprop="description" content="《寻找阿尔法——量化交易策略》 WorldQuant">
+  <meta itemprop="datePublished" content="2025-01-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="14851">
+  <meta itemprop="keywords" content="Quant Knowledge,Readings">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="《寻找阿尔法——量化交易策略》读书笔记整理">
+  <meta name="twitter:description" content="《寻找阿尔法——量化交易策略》 WorldQuant">
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/zhoujb22" target="_blank">
+            <img class="img-circle img-rotate" src="https://zhoujb22.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Jinbo Zhou</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">A Blog Space to link us</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Thank you for your attention. I will continue to update and share blog articles in different fields.~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://zhoujb22.github.io/tags/algorithms/" class="tag-list-link" rel="3">algorithms<span
+               class="tag-list-count">3</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/css/" class="tag-list-link" rel="1">css<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/html/" class="tag-list-link" rel="1">html<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/index/" class="tag-list-link" rel="1">index<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/markdown/" class="tag-list-link" rel="1">markdown<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/privacy/" class="tag-list-link" rel="1">privacy<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/quant-knowledge/" class="tag-list-link" rel="5">quant knowledge<span
+               class="tag-list-count">5</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/quant-skills/" class="tag-list-link" rel="1">quant skills<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/readings/" class="tag-list-link" rel="2">readings<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/shortcodes/" class="tag-list-link" rel="1">shortcodes<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/sql/" class="tag-list-link" rel="1">sql<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://zhoujb22.github.io/tags/themes/" class="tag-list-link" rel="1">themes<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://zhoujb22.github.io/categories/syntax/" class="category-list-link">syntax</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://zhoujb22.github.io/categories/themes/" class="category-list-link">themes</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/algorithms/" class="tag-list-link">algorithms</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/css/" class="tag-list-link">css</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/index/" class="tag-list-link">index</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/privacy/" class="tag-list-link">privacy</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/quant-knowledge/" class="tag-list-link">quant knowledge</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/quant-skills/" class="tag-list-link">quant skills</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/readings/" class="tag-list-link">readings</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/shortcodes/" class="tag-list-link">shortcodes</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/sql/" class="tag-list-link">sql</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://zhoujb22.github.io/tags/themes/" class="tag-list-link">themes</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" class="title">《寻找阿尔法——量化交易策略》读书笔记整理</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2025-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2025-01-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/11/the-black-box--overview-and-theory-driven-alpha-models/" class="title">The Black Box -- Reading Notes</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-11-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-11-02</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-3/" class="title">Minimum spanning tree 3</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-27</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-2/" class="title">Minimum spanning tree 2</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-23</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://zhoujb22.github.io/2024/10/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%97%E6%B3%95-1/" class="title">Minimum spanning tree 1</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2024-10-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2024-10-22</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/"
+    >《寻找阿尔法——量化交易策略》读书笔记整理</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" class="article-date">
+  <time datetime="2025-01-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2025-01-22</time>
+</a>
+</span>
+  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/quant-knowledge/"> Quant Knowledge </a>
+    <a class="article-tag-link" href="/tags/readings/"> readings </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 14851 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 30 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="一阿尔法信号构建要求">一、阿尔法信号构建要求</h2>
+<ol>
+<li><strong>基本特征</strong>
+<ul>
+<li>理论简洁且数学表达式简单</li>
+<li>代码实现优雅</li>
+<li>具有较高的夏普比率（风险调整后收益）</li>
+</ul>
+</li>
+<li><strong>稳定性要求</strong>
+<ul>
+<li>对数据和参数微调不敏感</li>
+<li>适用于多股票池、多区域市场</li>
+<li>能够持续创造新高利润</li>
+</ul>
+</li>
+</ol>
+<h2 id="二阿尔法开发流程">二、阿尔法开发流程</h2>
+<h3 id="迭代循环框架">迭代循环框架</h3>
+<ol>
+<li>数据变量挖掘</li>
+<li>变量变化建模</li>
+<li>构建持仓量数学表达式</li>
+<li>历史回测验证</li>
+<li>通过验证则纳入信号池</li>
+</ol>
+<h2 id="三阿尔法生命周期规律">三、阿尔法生命周期规律</h2>
+<ul>
+<li><strong>市场博弈机制</strong>：盈利策略吸引资金→策略容量饱和→收益摊薄→策略失效→新机会产生</li>
+<li><strong>有效周期关键</strong>：
+<ul>
+<li>历史验证时长</li>
+<li>资金流入规模</li>
+<li>市场结构变化速度</li>
+</ul>
+</li>
+<li><strong>市场动态平衡</strong>
+<ul>
+<li>资金流动与策略有效性呈现周期性变化</li>
+<li>新旧策略交替维持市场活力</li>
+<li>阿尔法信号在市场演进中持续更新迭代</li>
+</ul>
+</li>
+</ul>
+<h2 id="四阿尔法评估体系">四、阿尔法评估体系</h2>
+<h3 id="核心评价指标">核心评价指标</h3>
+<ol>
+<li>信息比率 = 每日损益均值 / 标准差</li>
+<li>夏普比率（风险调整后收益）</li>
+<li>最大回撤幅度</li>
+<li>策略独特性（与其他信号相关性&lt;0.1）</li>
+</ol>
+<h3 id="回测验证要点">回测验证要点</h3>
+<ul>
+<li>样本外测试有效性高 and 样本内表现好</li>
+<li>极端值对模型的破坏性检验</li>
+<li>交易成本敏感性测试</li>
+</ul>
+<h2 id="五历史市场认知误区">五、历史市场认知误区</h2>
+<h3 id="核心观点">核心观点</h3>
+<ul>
+<li>历史市场并非更易交易</li>
+<li>过去赚钱同样具有挑战</li>
+</ul>
+<p>现在去看历史，会觉得当时的市场比现在更加容易交易，这是因为如下几个原因第一，你当时不会有现在的领悟，第二你现在拥有之前无法得到的数据，第三，你当时没有现在这么强大的计算能力和技术，因此每个十年都有他自己的市场和独特的市场机会，这取决于阿尔法开发者是否能够有当时的技术数据寻找的市场机会。反观历史，诸如过去预测市场和赚钱更容易这样的想法是错误的。</p>
+<h2 id="六止损">六、止损</h2>
+<p>有这样一个悖论，只有一个理论一直适用，就是没有理由一直适用。</p>
+<ol>
+<li><strong>理论与规则的局限</strong>：任何理论或规则都不是绝对适用的，它们只是帮助我们理解现实的工具，但永远无法完全反映现实的复杂性。因此，我们不能迷信单一的理论或规则，而应保持开放的态度，关注全局。</li>
+<li><strong>止损的重要性</strong>：止损意味着在规则失效时及时放弃，避免继续依赖无效的规则。判断一个规则是否有效的标准是它当前是否能够带来收益。如果规则失效，应及时停止使用，而不是盲目坚持。</li>
+<li><strong>多样化策略</strong>：为了避免单一规则的局限性，应采用多种规则和策略，并根据实际情况灵活调整。同时，要提前计划如何在低成本的情况下改变策略，并及时停止表现不佳的策略。</li>
+<li><strong>判断策略有效性的标准</strong>：如果一个策略的表现超出预期历史收益范围，可能表现为回撤过大、收益风险比下降或出现历史数据之外的结果，这表明策略可能已经失效，需要及时止损。</li>
+<li><strong>接受不确定性</strong>：我们无法完全掌握所有信息，因此必须接受现实的不确定性。通过广泛思考和不断调整规则，我们可以逐渐接近对事物的深入理解，但永远无法达到完全掌握。</li>
+</ol>
+<h2 id="七alpha评估方法">七、Alpha评估方法</h2>
+<ol>
+<li><strong>模拟与量化</strong>：
+<ul>
+<li>通过模拟（如回撤模拟）来量化交易策略的结果，例如计算信息比率（Information Ratio）</li>
+<li>将阿尔法的预测与交易策略配对，假设阿尔法预测的是策略中特定资产的仓位变化，而交易行为则基于阿尔法预测的变化。</li>
+</ul>
+</li>
+<li><strong>局限性</strong>：
+<ul>
+<li>阿尔法主要用于预测收益，而非直接指导交易，因此可能难以找到完全匹配的策略。</li>
+<li>模拟过程中成本较低甚至无成本，但在实际应用中可能存在偏差。</li>
+</ul>
+</li>
+<li><strong>评估指标</strong>：
+<ul>
+<li><strong>信息比率</strong>：阿尔法收益与基准收益标准差的比值，用于衡量阿尔法预测的持续性和有效性。结合观察时间窗口，可以判断阿尔法信号是真实的预测还是随机噪声。</li>
+<li><strong>利润分析</strong>：根据交易规模划分阿尔法创造的利润，评估其对交易成本的敏感性。高利润阿尔法受交易成本影响较小，而低利润阿尔法通常不适合作为独立策略使用，除非与其他阿尔法结合使用。</li>
+<li><strong>独特性</strong>：在阿尔法信号池中，信号与其他信号的相关性越低，其独特性越高，价值越大。低相关性表明阿尔法信号提供了新的信息，而非重复现有信号。</li>
+</ul>
+</li>
+<li><strong>Alpha稳健性</strong>
+<ol>
+<li>样本内外表现一致性：样本内信息比率(IR)＞3，样本外IR＞2</li>
+<li>参数鲁棒性：在主要参数区间（如半衰期20-60日）表现稳定</li>
+<li>低维护成本：年化换手率＜100倍，季度调仓次数＜5次</li>
+<li>逻辑可解释性：因子经济学意义明确，归因分析清晰</li>
+<li>跨市场有效性：在A股、港股、美股等主要市场均有正向表现</li>
+<li>风险可控性：历史最大回撤＜15%，Calmar比率＞1.5</li>
+<li>回撤恢复能力：平均回撤修复周期＜30个交易日</li>
+<li>资金容量：单策略管理规模＞10亿RMB</li>
+</ol>
+</li>
+</ol>
+<h2 id="八alpha提升方法">八、Alpha提升方法</h2>
+<p>避免损失的方式之一是开发<strong>行业中性化策略</strong>。这种策略使得不管正在发生的是正面还是负面的事件，资产都没有很大的下跌风险。行业中性化策略是指投入一个行业的头寸加总为零及行业中所有的股票的持仓金额加总为零。</p>
+<p>得到简单的阿尔法公式后，可以计算年化收益率、信息比率、最大回撤、盈利比、日换手率、每美元的交易利润；之后，可以增加如行业中性化的限制条件，或者使用相对大小作为预测指标等级为相对的阿法值， 我们还可以通过衰减运算来降低换手率及对阿尔法处于某时间窗口的平均值。</p>
+<h2 id="九关于风险因子">九、关于风险因子</h2>
+<p>我们发现，任何阿尔法策略在实践中往往都会无意间引入某些风险因子。例如，尽管某些阿尔法信号在构建过程中未直接使用价格信息，但由于市场行为的复杂性，它们仍可能受到市场动态的影响。以新闻情绪为例，虽然新闻撰写者并不会刻意基于股价撰写文章，但当股票价格飙升时，新闻报道往往带有更强的乐观情绪。因此，从新闻情绪中提取的阿尔法信号可能隐含着惯性效应，这使其与动量因子存在一定关联。</p>
+<p>这些风险因子可能在未来持续提供正向的风险溢价，但在研究过程中，我们需要注意以下几个问题：</p>
+<ol>
+<li><strong>风险因子的可预测性及其收益的可持续性</strong><br>
+由于这些因子的存在较为公开，市场上的聪明资金会不断涌入并利用它们，因此它们的夏普比率及风险调整后的回报不可能长期维持较高水平。市场竞争会使得收益逐渐压缩，直至该因子不再提供足够的吸引力。</li>
+<li><strong>市场流动性与风险因子的影响</strong><br>
+一些风险因子（如市值、流动性）要求市场中多空资金流向存在较大不均衡。然而，在实际交易中，投资者通常希望市场流动性相对均衡，以便顺利建仓和清仓。这种不均衡可能会带来额外的交易成本，并在市场危机时造成更严重的流动性冲击，影响投资者的风险管理能力。</li>
+<li><strong>风险因子的波动性与宏观趋势的影响</strong><br>
+许多风险因子的收益波动性在不同市场环境下可能存在较大差异，特别是在宏观经济周期变化时。例如，在市场下行期，这些因子可能经历长期回撤。此外，部分风险因子可能会被金融机构包装为另类贝塔产品（Alternative Beta Products），进一步加剧其未来的波动性。2009年，市场回撤导致一个简单的惯性因子进入长期回撤阶段，这表明某些风险因子的表现并不稳定。</li>
+<li><strong>市场共振效应与系统性风险</strong><br>
+由于许多量化投资策略广泛使用相同的风险因子，当市场出现突发事件时，集中持仓可能引发剧烈的连锁反应。例如，在2007年8月的量化危机中，部分投资者大规模清仓，导致一些常见的量化风险因子遭受严重损失。在这种情况下，市场的跟风行为可能加剧危机，使得市场短时间内出现剧烈波动。因此，投资者应尽量采用与市场主流不同的策略，并控制对通用风险因子的敞口，以降低潜在的系统性风险。</li>
+</ol>
+<p>综上所述，尽管经过充分研究的市场效应可能在长期内继续提供正向收益，但这些收益可能既是对风险的合理补偿，也可能是市场非理性行为的产物。因此，在研究过程中，我们更倾向于将这些因素视为风险因子，而非真正的阿尔法。在构建新的阿尔法策略时，我们希望尽量减少风险因子的影响。在消除风险因子后，应该评估阿尔法的剩余贡献，一个优秀的阿尔法策略在剔除风险因子影响后，仍然应当具备较高的夏普比率和优异的风险调整收益。尽管在某些情况下，单位货币收益可能有所下降，但从长期来看，这种优化能够提升策略的稳定性和可持续性。</p>
+<h2 id="十关于ic和ir">十、关于IC和IR</h2>
+<ul>
+<li>两种IC：
+<ul>
+<li>Rank IC 排序相关系数</li>
+<li><strong>Pearson IC</strong> 线性相关系数</li>
+</ul>
+</li>
+<li>三种IR：
+<ul>
+<li><strong>传统信息比率</strong>: 因子超额收益率/超额收益率标准差</li>
+<li><strong>因子信息比率（基于 IC）</strong>: IC mean / IC std</li>
+<li>《Active Portfolio Management》（Grinold &amp; Kahn）提出 $IR = IC \cdot \sqrt{\text{Breadth}}$（Breadth 为独立预测次数）。
+WorldQuant: 信息比率IR是每日损益的平均值除以每日损益的标准差，用来衡量正确或正确组合风险调整后的收益是信息系数 ×交易次数的平方根。 我们认为高的信息比率能够获得较好的风险调整收益。 主动型的投资经理会交易的更频繁，他们每天都多次调整 证券组合。交易的频率越高，越容易呈现统计特征。我们引入高斯分布或正态分布概念，当我们把N个独立分布的正态分布相加时，相对于原来的概率分布正态分布的均值一样，但是标准差只有根号N分之一 。相同的IC四倍的交易频率，而是原来的两倍。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><strong>这三个 IR 不是完全相同的度量方式</strong>：
+<ul>
+<li>传统 IR = <strong>实际回测结果</strong>。</li>
+<li>因子 IR = <strong>因子预测稳定性</strong>。</li>
+<li>Grinold-Kahn IR = <strong>理论上可实现的超额收益能力</strong>。</li>
+</ul>
+</li>
+<li><strong>Grinold-Kahn IR 数量级取决于交易频率</strong>：
+<ul>
+<li>高频交易（大 ${Breadth}$）能显著提高 IR。</li>
+<li>低频选股策略依赖高 IC，而不是 Breadth。</li>
+</ul>
+</li>
+<li><strong>实际应用</strong>：
+<ul>
+<li><strong>基金经理/投资组合</strong> → 用 <strong>传统 IR</strong> 评价表现。</li>
+<li><strong>量化因子研究</strong> → 用 <strong>因子 IR</strong> 评估稳定性。</li>
+<li><strong>策略设计</strong> → 用 <strong>Grinold-Kahn IR</strong> 评估理论可行性。
+💡 <strong>如果你的策略是高频交易，即使 IC 很低，Breadth 足够大，IR 仍然可能很高。这就是量化高频交易的优势所在！</strong> 🚀</li>
+</ul>
+</li>
+</ol>
+<h2 id="十一alpha与基本面分析">十一、Alpha与基本面分析</h2>
+<p>基本面分析是证券投资分析方法的基石，显然是阿尔法策略研究中的一个很重要的方向。股票的基本面分析，是通过挖掘可能会影响公司实际业务和未来前景的潜在因素，从而判断证券内在价值的技术手段。从广义上来说，基本面分析是指分析一个金融实体的经济状况，而不是特意分析其价格走势。可以从行业或者经济整体情况分析，而不是单一的分析一只股票。 相对于基本面分析，另一种主要的证券分析方法，同时也是阿尔法策略中的一个主要方向技术面分析，主要考虑证券价格和交易量的变化。</p>
+<p>基本面分析，既可以是定性分析，也可以是定量分析。很多实证研究都试图通过发现财务报表数据与证券价格之间的关系，来提高基本面分析的准确性，除财务报表中的 常见科目外，一些标准格式外的相关信息也会在辅助中说明。季度电话会议也是我们了解公司披露信息的手段；由投资银行或证券公司等卖方提供的分析报告也是一种信息来源。由于基本面数据更新频率较低，基本面相关的阿尔法信号，相对于其他类似量价的信号，其换手率和股票覆盖率都很低。 另一方面，基本面信息反应的是长期的股价。基于基本面的阿尔法信号的累积收益，通常集中发生在财务公告的前后，然后在信息披露一年后逐渐平稳。也就是说大部分超额收益是和公司前一年利润变化相关的。</p>
+<p>基本面分析也给我们提供了一些股票分类思路。 例如，我们可以根据公司的基本面状况，把股票分为价值型和成长型股票。价值型股票通常指的是股价低，市盈率低，高股票分红的企业。成长型股票相反，这些基于基本面的分类方法可以帮助我们更好地理解不同类型股票的市场表现，从而设计出更好的阿尔法信号。</p>
+<h2 id="十二alpha与换手率">十二、Alpha与换手率</h2>
+<p>换手率：总的交易量除以持有的总仓位。</p>
+<p>低换手率不一定意味着低收益， 换手率和收益必须找到一个平衡。某些触发频率较低的信号，通过平滑曲线（再次降低触发频率）的方法还可以提高表现。去极值和衰减因子能够降低换手率，可以用来防止对信息太过敏感，从而造成预测值不必要的改变，最终结果取决于阿尔法策略如何设计。但不管结果如何，理解在不同换手率下阿尔法策略的表现，能够帮助我们获得交易灵感，我们宁愿选择加杠杆而不太影响收益的阿尔法策略，也不会选择为稍微降低换手率而损失所有收益的策略。</p>
+<h2 id="十三alpha与证券组合风险的关系">十三、Alpha与证券组合风险的关系</h2>
+<p>要想确定最优策略，从而持续获取尽可能多的收益需要一定的技巧。阿尔法可以反映出一个基金经理在不提高风险的前提下，扩大证券组合收益的能力。在不增加风险的条件下增加收益并不意味着阿尔法对于收益来说是一种没有风险的源。 当阿尔法从与证券组合里的风险正交的源获得收益，他对风险组合具有多元化效应。真正的阿尔法并不能对证券组合里已有的风险产生杠杆作用，他只能增加不同的风险源。</p>
+<p>我们需要根据初期的风险水平和收益来确定一个阿尔法是否能够增加价值，这就意味着阿尔法对背景信息有很高的依赖度，也就是说一个阿尔法可能增加某种证券组合的价值，却对另一种证券组合无效。 我们可以将证券组合看作风险的综合体，每一种收益都衍生于其对应的风险源。两种证券组合的不同效果取决于风控经理挖掘数据中风险源和收益源的数量。 极端情况下，一部分风控经理坚持倾向于关注少数几种风险，尝试通过增加赌注去增加价值，通过平凡的交易弥补多元化投资的不足。另一部分风控经理则尽量避免市场择时或者因子择时， 不会在少量因子上下大赌注，他们通过在证券组合中引入更多的风险源来进行风险管理。在介于两者之间的证券经理，要么更偏好与将两种操作方式结合起来，要么被指定必须要求满足特定的要求，在这些要求中，有些会限制他们可以涉及的风险种类，有些会控制他们在每种风险源上设置的权重。例如，证券经理可能被要求他的证券组合里不可以承担任何利率风险，这样的话，他就必须确保利率风险因子的敞口为零。这可以保证不论这个因子怎么变化，它的证券组合都能不受影响，但是这也迫使证券经理放弃与之相关的收益。为了弥补收益上的损失，证券经理可能在其证券阻合中的其他因子上冒更大的风险，或者创造阿尔法。</p>
+<p>很多风险源已经被广泛认识，并理解。在极端的情况下，证券经理可能会被要求在其证券组合中去除大部分甚至是全部的已知风险。为了依然可以产生收益证券经历，就不得不对其他市场参与者上不了解的、或尚未被广泛利用的风险源进行研究。而这就是创造阿尔法工作的意义：寻找别人不了解的或与其他证券经理不同的风险源和收益（理想情况下为正交的）。 这种阿尔法的衰减速度很慢，可以为发现它的人带来长期利润据。又由于其特殊性，与之收益相关的风险，不会对证券组合中已有风险产生杠杆作用，只是会使风险更加多元化。在效果上，每个阿尔法都可以提供一种新的收益流，稀释证券组合中的风险压力，这样单个风险就不会对证券组合产生重大影响。</p>
+<p>已被广泛知晓的风险很容易受到拥挤效应或从众效应的影响，对证券经理的证券组合造成重大威胁。只要其他市场参与者忽略他这种因子的风险就会很小。然而一旦他的使用变得过度拥挤，其风险——收益曲线就会发生剧烈变化。随着追逐某一因子的资本的增加，证券经理从该种因子中收获的收益就会减少，而采用该种风险的证券组合面临的风险值就会增大。这是因为在某些时刻，资本的撤出更可能大于资本的注入，而且通常的情况是，这种撤出会像暴雨一样突然而至，而资本的注入通常是个缓慢的长期的过程。这就是为什么很难选择退出某种因子恰当时机的原因，同时也是为什么关注少数几个因子的证券组合比多元化证券组合波动性更大的原因。 恐惧对情绪的驱动力比贪婪大更多，因此抛售发生很突然，几乎不给证券经理任何预警或反应的时间。</p>
+<p>另一方面，未知因子不应该被等头论之。 未知因子的风险敞口不应该被严格限制，因为他们发生拥挤的概率并不高。因此对这些因子增大风险敞口有益于优化证券组合，因为收益并没有在其他市场参与者直接进行分配，又因为参与者少，所以引发抛售的情况也很少。然而在实践过程中很难确定，究竟有谁知道并在使用这样的阿尔法，以及他们在上面究竟有多少资本在流动。 因此，证券经理通过使用尽量多的不同的阿尔法来稀释这些风险是非常明智的。</p>
+<p>对于有无风险意识的证券经理来说，在理想的证券组合中，该尽量将那些广为人知的风险因子的风险压力贝塔控制为零，同时应该尽量多的发现新的位置，因此，阿尔法应当以所有已知因子正交以使其不受其他市场参与者的市场行为的影响，并且不同阿尔法之间也要互相正交，从而确保正确组合具有最大的风险多元性。这样的证券组合的收益将全部来自于阿尔法成分在很大程度上其余市场参与者并不能从中获益。</p>
+<p>在现实中，很少有对已知风险敞口为零的正确组合。正确组合中的因子，无论是否众所周知，彼此之间都几乎不可能完全正交。因此，证券经理的阿尔法通常是以下两种策略的结合：1️⃣：因子择时（根据时机调整不同风险因子的敞口）；2️⃣： 掌握其他市场参与者未知的风险源。</p>
+<p>在因子择时的情况下，其他市场参与者虽然不太可能知道证券经理的阿尔法具体是什么，但是他的阿尔法只是一些已知因子的组合。正确经理对风险压力可以进行更好的组合，使得每种风险，因此可以获得尽量多的正向影响，同时尽量减少负面影响。这种类型的阿尔法可以通过改变操作时机和频率等方式重新建立平衡的行为，对正确组合中已有的风险敞口进行调整。 使用这种类型的阿尔法需要付出一定的代价。原因很简单，如果一种阿尔法提高交易频率或规模，那么这种证券组合的可测量性及证券经理对其的控制能力就会受到严重影响。一般情况下，正确经理进行因子择时的次数越多，就越不可能扩大其证券组合的规模，因为频繁或者大额的转手可能对收益有负面影响，原因在于转手需要应的手续费，而且价格影响比较大。</p>
+<p>最有价值的是发现不会对有风险源产生杠杆作用的阿尔法，这样可以做到风险多元化，但是这些阿尔法很难被发现，尤其在已知风险因子的数量已经相当大的情况下。为了发现这种阿尔法，就必须对已知风险因子的正交空间有意识的进行深度研究。这个过程代价很大，产出可能很小。然而即使这样，也是值得的。这种阿尔法而除了会产生收益之外，还会使证券组合实现真正的多元化。这种阿尔法的绝对回报，虽然很诱人，但其真正价值在于发现一种完全不同的风险源，可以为证券组合带来不同于其他风险源的收益。</p>
+<p>考虑到阿尔法与证券组合风险之间的动态进化关系，对于寻找阿尔法或应用阿尔法构建证券组合的从业者来说，主要评估阿尔法的绩效之外，还要对阿尔法在以下关键性问题上的表现进行评估：第一、他真的与众不同吗？如果阿尔法不与已经知道的风险因子或其他证券组合中的阿尔法正交，那么，这个阿尔法就会对风险产生放大作用。这种重叠越低越好，证券经历至少应该认识到这个重叠度的存在，并且清晰了解每个因子上承担了多大的风险。第二，谁不知道他？有风险带来的收益必须不被其他市场参与者知道，就算有人知道，证券经理需要做的也是尽可能的减小敞口。 第三，他合理吗？如果一个阿尔法从不符合市场行为的活动中获得收益，那么这个阿尔法基本上是没有用的。如果一个阿尔法交易的全是非流动性的资产，那么他怎么会产生收益呢？ 第四，他能规模化吗？对因子择时依赖度很高的阿尔法非常难操作，原因在于这种阿尔法想要成功的话，必须要有更多市场参与者的配合。你需要一个交易伙伴执行的办法。各主要的是你对这样的人是否存在以及他叫将采取什么样的行动，必须判断正确。这种情况发生的越频繁，你需要进行的交易量就越大，你从阿尔法中获益的机会就越小。因为，你希望交易的条件可能不会一直存在或者其可能会与你的假设不符。第五，他会持久吗？好的阿尔法必须不能被出街市场参与者直觉性的感受到，最好对他们没有 吸引力，但是对于进阶型市场参与者来说，他是非直觉性的有逻辑的。这样就可以通过时间差减少其他市场参与者对收益的瓜分。即使是一个不容易被察觉到的因子，也可能迅速地被其他人发现从 高收益低风险源变成低收益高风险源。</p>
+<h2 id="十四风险与回撤">十四、风险与回撤</h2>
+<p>在这里，我们只 简要的讨论在设计阿尔法时的风险。</p>
+<p>投资多元化程度可以降低阿尔法或证券组合的风险。在头寸集中度可控的前提下，使用的金融工具种类越多，多元化效果越好。然而，我们扩大标地的选择区域的同时，也会引入其他风险。这些风险包括在相同的阿尔法内对不同国家和不同货币体系的风险敞口。应当认真考虑谨慎对待这些风险，有时还要通过中性化方法来降低这些风险。同样，，使用丰富的资产种类，如期货、股票、债券等，也会提高多元化程度。</p>
+<p>关于风险，需要指出的一点是，一个好的阿尔法尝试区分股票中的胜者和败者，从而建立多空组合，但是这并不是百分之百会发生的。我们假设有一个阿尔法可以区分胜者和败者，而且这些股票的胜败趋势长期稳定。如果这种情况真的发生了，那么这个阿尔法对这些股票的价格趋势就有了风险敞口。有时，交易某只股票赚取到一定的收益后，阿尔法会减弱这支股票的持仓信号，而不是持续跟进这只股票的趋势，直到产生回撤。同样的事情会发生在利用阿尔法预先设置止损的情况下。如果样本空间不够广的话，以上这些技术就尤为重要了。</p>
+<p>回撤是阿尔法损失相对其分值的百分比，我们在回测时通常关心的是回撤的两个重要指标： 阿尔法的历史最大回撤以及每年最大回撤和最大回撤历时。</p>
+<p>以下一些简单的最小化风险的方法可以帮助你将回车量最小化：最小化所有单个证券的最大敞口；最小化所有相似证券组合中的最大敞口；最小化对一般阿尔法因子的敞口；最小化对整个市场的敞口。</p>
+<h2 id="十五数据与alpha设计">十五、数据与Alpha设计‘</h2>
+<p>数据在设计的过程中，扮演了核心角色。首先，我们需要利用基础数据运行模拟。基础数据是指股票价格和交易量。不论你想要对什么类型的阿尔法做回测，你都需要利用这些基础数据计算收益率下普比率及换手率 等指标。如果没有这些指标，我们永远也不会知道这个阿尔法是好还是坏。其次，数据本身对阿尔法具有启发作用。例如，你可以画出某些股票的价格交易量图表，节约历史上是否有类似情况发生，你也可以用量价数据进行技术分析。</p>
+<p>对于阿尔法研究人员来说，寻找新的数据是非常重要的技能。人们通常喜欢绩效好、相关性低的阿尔法。新的数据及可以达成上述目标。如果我们能在原始数据的基础上得到另一种数据就可以从不同的角度审视目标公司，增强原始信号，获得更优质的信号。 同时我们总想创造出相关度较低的阿法提高阿尔法信号是多元性。然而，尽管构建阿尔法的方法不同，但有时，基于同一个数据的阿尔法信号也会表现出高度的相关性。这是由于使用了相同的数据，阿尔法信号呈现出天然的相关性。</p>
+<p>以下是几种数据的来源方法： 第一、文献中的数据，数据的来源有很多，最常用的来源是学术文献。论文中，我们可以查到作者们在研究中使用的各种各样的数据，可以参考他们的使用；我们也可以利用互联网上的公共数据，但是越鲜为人知的数据可利用价值就越高，但是如果一些常用的数据从来没有用于价格预测，那么即使很多人都知道，他们仍然具有被使用的价值。 第二、供应商处的数据。 数据是非常有价值的信息，因此售卖数据也是一门生意。</p>
+<p>作为阿尔法研究人员，不论什么时候，只要拿到新数据，首先要做的不是利用数据检验阿法信号，而是检验数据的可用性。 数据的发布时间是个非常重要的因素，任何没有时间戳的数据就是没用的数据。这是因为如果不知道数据创建的时间点，我们就不可能有效的了解他的进程，只能盲目的使用它。如果我们尝试使用当前还不可用的数据，即未来数据，我们会引入前瞻性偏差，将使得阿尔法效果惊人。</p>
+<p>数据可能产生的另一个问题是幸存者偏差。例如，数据上提供一组阿尔法模型，，测试的时候绩效很好，但是这并不意味着这个阿尔法模型在未来也会表现很好。因为我们不知道数据上开发了多少模型，这些模型是基于什么建立的。如果数据供应商是建立了1000个模型，只有一个成功了，我们就可能会面对幸存者偏差。 这个偏差是由数据上面入的，是超出我们的控制范围的。在这种情况下，一些样本外测的数据就更有用了。因此样本外侧是非常有用的，如果阿尔法在样本外侧绩效表现依然很好的话，则我们可以认为阿尔法的稳定性很好，因为测试是在不受控制的样本库中进行的。</p>
+<p>我们在进行阿尔法设计的时候，应该对数据的完整性进行检查。在进行历史模拟时，哪怕一个坏数据也能破坏整个尔法信号。在现实生产中，如果你认为数据总是正确的，那么你将面临很大的风险，因为错误的数据可能会彻底扭曲阿尔法信号，导致巨大的损失。</p>
+<p>严谨的阿法研究也需要对数据进行深入的理解。我们一定要理解数据，这样才能更好地利用它。</p>
+<h2 id="第十六统计套利过度拟合与alpha的多样性">第十六、统计套利，过度拟合与Alpha的多样性</h2>
+<p>阿尔法可以直接预测股票市场吗？或者更确切的说，我们可以预测苹果公司的股价吗？我们很可能预测不到，统计套利的本质，就是我们只能在统计意义上进行预测。统计套利的关键假设认为金融商品价格是有规律的，通过研究历史数据可以发现这些规律，并用规律预测未来。正确的价格由多种规律驱动，对于特定时刻的特定金融产品，这些规律并非必然适用。但是，真正驱动价格的规律或者基于价格驱动规律的好的阿尔法，应该在我们研究的交易日中表现出具有统计意义的预测性。</p>
+<p>在量化中，利用统计套利寻找阿尔法的过程具有过度和或发现违背价格驱动规律的风险。例如，代码中还有C的股票通常在星期三上涨，这样的阿尔法很有可能是不值得投资的阿尔法，即使他在过去可能表现出了盈利性。</p>
+<p>虽然单纯的利益用数字对数字进行挖掘，可以发现一些写著的效果，但更为重要的是深入理解在阿尔法的构造过程中潜在的价格驱动规律。采用合适的实现方法，将驱动规律转化为阿尔法。金融商品的价格由多种因素驱动，如交易微结构、基本面固执、 投资心理等。因此，能够用于构建阿尔法的价格驱动规律很多。此外，基于同样的价格驱动规律利用不同的实现方式，也可以构建不同的阿尔法。例如均值回归规律，其中关于均值的算法有很多种，关于回归的定义也不止一个，这样就可以构造出不同的阿尔法，这些阿尔法都可以表现为盈利性。</p>
+<h2 id="第十七提高alpha稳定性的方法">第十七、提高Alpha稳定性的方法</h2>
+<p>稳定的阿尔法策略应该具有如下特征：
+第一、不随着交易环境的变化而变化：阿尔法策略应该体现统计的属性，他独立于整体交易市场的选择。或者说，我们不希望我们的阿尔法策略依赖于某个进入工具或者一组工具。这一约束平凡的被市场所强加，级别应包括政策调整、客户偏好、流动性降低、做空等。</p>
+<p>第二、在极端市场下的稳定性：阿尔法信号的所有指标都不应该出现极具下跌的情形。</p>
+<p>改善稳定性的简单方法：
+第一、排序法：</p>
+<ol>
+<li>划分等级：划分等级按照某种排序方法，将一个向量的元素替换为它们的序号，例如从零到向量长度 -1， 通常将所有向量元素除以向量长度-1进行归一化。如果两个因子值相同，那么他们应该具有相同的序号，该序号等于它们对应位置的均值。</li>
+<li>分位点近似：分位点就是对一个随机变量的累积分函数以固定间隔分为采样得到的点集聚。。将有序数据分别规律，在有相同数据的数据及中被称为Q分为法；分为点就是连续数据子集之间边界的数据值。举例来说， 我们熟知的最小平方回归法，既最小二乘法，对于非平稳、非线性输入可能是不稳定的。然而，它可以被最小分为平方LQS所代替。 其目标是使平方差的某些分位数最小化。最常用的LQS方法是使中位数平方最小化。
+第二、 向正态分布逼近：</li>
+<li>费希尔变化公式。</li>
+<li>Z-Score
+第三、 限制性方法：</li>
+<li>截取法：限制每支股票投资资金在总投资资金上所占的最大比例。</li>
+<li>温莎化：温莎化是统计数据的变形，通过限制统计数据的极值来减少假的极端值带来的影响。</li>
+</ol>
+<p>改善稳定性的高级方法：
+当我们要从一个 有限数据集中预估数值时，重采样方法会比较有效，比如自引导法、交叉验证法等。</p>
+<p>Bertsimas等人在2004年曾提到：提高稳定性，可以在极端市场环境下显著改善阿尔法的测评指标。</p>
+<h2 id="第十八自动化搜寻alpha">第十八、自动化搜寻Alpha</h2>
+<p>自动化的阿尔法搜寻就是利用计算机算法从海量云数据中找到阿尔法信号。只要使用得到它可以协助提高阿尔法搜寻的效率，一日之内即可得出数迁移记的阿尔法。但是，找到的所有信号并非都是真的阿尔法。很多看起来很棒的阿尔法信号都是噪声，而不具备任何预测能力。因此必须在输入准备、搜寻算法、信号测试算法等方面做出特别努力，以改善这些阿尔法 的稳定性。</p>
+<p>总体来说，一个自动化搜寻有三个组成部分：输入数据搜寻算法以及信号测试。首先，我们选择一组有意义的财务数据作为输入预测变量。接下来对输入预测变量进行预处理以去除极端值，再输入搜寻算法。其次我们选择一个目标函数Y，用来表征未来的股票回报或者其辩题。再次， 适配算法会为一组选择的函数族找到一组参数，最简单例子是线性函数，依次来模拟目标函数。最后，对适配好的函数进行稳定性测试。</p>
+<p>在数据准备和信号测试中，有一些技巧可以使阿尔法更加可靠：第一、 将输入数据比例化是一个好方法。好的股票收益预测指标应该对所有股票具备同一性和可比性。因此原始财务数据，通常因为在不同股票上不具备可比性，所以不是一个好的预测指标。比例化的两个方法的第一可以用该变量的当前值比其历史值；第二可以将该变量比上同类的一个相似变量，例如既收入和营收的比值， 净收入和营收对于所有股票都是有可比性的。 第二、输入数据，不应该取自太多的类别。给函数添加太多的输入变量会使其在样本内侧有很好的表现，但是通常会因为过渡你和而导致其损失预测能力。配置很多变量可能会导致过度拟合，但是适配来自很多不同类别的变量则更糟糕。这里类别只在数据的类型和来源。 每个类别的数据有其自身特征频率，例如基本面数据通常呈现出清晰的季度周期性，价格交易量分布稳定，而内幕交易数据通常是随机的。如果模型包含很很多来自不同类别的数据，那么其复杂度将大大提高，而该模型也将对数据中的噪声更加敏感。第三、测试周期并非越长越好。 在选择输入数据的长度时需要折中。如果测试周期太短，我们得到的数据太少，就会对计算结果信心不足。如果测试周期太长，驱动逻辑可能已经发生了变化，就会让计算结果变得不可靠。 第四、敏感性测试和重要性测试很重要。一个好的尔法信号应该对噪声不敏感。最常用的稳定性测试技术，包括在随机的数据集上，或者在每个独立的股票板块上测试来自不同周期、不同时段的数据。另外每个输入数据都应该对结果有显著作用。最简单的重要性，测试方法是去除一个输入变量，然后检查结果是否发生显著变化。如果每个输入变量都作用显著，那么我们对该信号会更有信心。</p>
+<h2 id="第十九alpha研究中的算法和特殊技巧">第十九、Alpha研究中的算法和特殊技巧</h2>
+<p>有几个来自于工程学，如机器学习和数字信号处理的算法和技巧，可以用来提取有效的模式关系和特征，从而为生成阿尔法服务。</p>
+<p>在阿尔法研究中，我们频繁的处理弱的分离器和预测器。根据积极学习中的提升概念，可以在很多场合通过学习一个合适的权重函数，从而将若干弱学习者建立一个强学习者。</p>
+<p>阿尔法研究还需要与 时间序列数据打交道。来自数字信号处理的滤波概念可以有效地对于持续数据降噪，并将持续数据分解为趋势和周期分量。</p>
+<ul>
+<li>数字滤波是对原始时序数据进行数学运算，以稀释或放大信号的某个特性。 数字滤波最初和最重要的应用是平滑滤波，既对持续数据中的高平分量进行意志，最简单和最广为使用的数字绿波是简单移动平均滤波。然而，平滑滤波引入的时滞，而时滞在交易过程中则是极度不利于盈利的。因此可以使用一些替代性滤波技术，以最小时滞达到要求的批发等级。 数字滤波的另一个常见应用是将持续点分解为趋势和周期分量，趋势抽取设计对高频分量的抑制及低通滤波，而周期提取涉及对低频分量的抑制，即高通滤波。巴特沃斯于1930年提出的巴特沃斯滤波是一种常用和有效的低通绿波。高通滤波则可以通过从原始持续数据中减去低通滤波后的数据得到。同时，低通滤波和高通绿波可以串联起来，以选择或排斥原始持续数据中一个特定的频率波段。</li>
+</ul>
+<p>阿尔法研究中的另一个有效技巧是特征提取。诸如主成分分析之类的算法可以帮助降低特征空间的维度。</p>
+<ul>
+<li>在阿尔法研究中应用PCA包括在高纬度数据中寻找模式、对观测数据进行聚类，采运在新矢量积下的投影之间的距离作为相似性的度量、主成分回归，以及收益率曲线分析。</li>
+</ul>
+<h2 id="第二十章机构研究入门">第二十章、机构研究入门</h2>
+<p>本节介绍阿尔法研究人员为了创造新的交易灵感，是如何将机构研究资源转化为自己的开发工具的。</p>
+<p>获取新的市场策略，灵感可以有许多来源，包括与同学、同事或朋友的讨论，以及金融新闻、研讨会、书籍等。我们重点介绍可免费获得的金融市场相关学术论文。</p>
+<p>由于过去几十年，由各种专家公开发布的研究特别多，因而消化所有的文章或许不是获取灵感的最快办法。</p>
+<ul>
+<li>期刊：
+<ul>
+<li>正式的学术期刊是教授和专业研究人员发表研究成果的地方。正式期刊上的论文均经过了同行的严格评审，评审中的其他人员会对其进行点评。因此，在这个过程中幸存下来的研究论文通常没有严重的研究方法错误。你不仅可以从中获得交易想法，还可以获得新的研究方法的启发。 在这些出版物中讨论内容，通常是专家学者们认为在发表的当前时点上非常重要的主题。学术界的主要焦点不是寻求市场策略，而是要了解主导经济相互作用的根本力量。虽然两者息息相关，但并不是每一篇文章都会同时涉及前者。 具有更普适结论的论文通常发表在高影响因子的期刊上，而且这些论文也会受到学术界的更多关注。对于希望利用这些论文结论的市场策略开发者来说，这个特性有其优缺点。一方面，这表示，你将会有更多的工作要做，从对一般经济理论讨论到具体的战略。 期刊上的讨论可能与市场脱节，你需要将它与市场联系起来。另一方面，在这些讨论中，可能会有重要的经济基础理论，能够改进所构建的许多策略。同时的自己通过基础理论的启发设计新策略，而不是直接复制现有的结论，会使新策略有别于其他市场参与者。</li>
+<li>与综合杂志相对的，还有聚焦在投资领域的杂志，其中的内容与投资策略和策略研究方法联系更紧密。在某些情况下，你甚至可能直接对其讨论的内容进行编辑和复制。但是这些策略被描述的非常详细，其他人也可以执行这些策略。不过，一旦你的核心策略代码通过测试，就可以考虑将其用作进一步创新的基础，这比从大致想法开始简单多了。</li>
+</ul>
+</li>
+<li>开源资料： 开源资料通常是可以自由访问的文档存储库，其中少部分允许用户自主的上传文档。自主上传意味着论文可能没有经过传统的同行评议过程。许多情况下，他们可能是正式学术论文的早期版本，以最终通过审查为目标。开源资料库有SSRN或 arXiv的论文库。一旦你确认了自己喜欢的学术作者名单，还可以在他们的个人页面上查看正在撰写的论文。开源系统的特点： 滞后性小、免费、品种更多、没有同行评议。</li>
+<li>跟进讨论：公开分享研究成果的一个好处是会引发讨论。讨论对如何改进现有框架或了解大多数人对其优点和缺点的看法会非常有用。 以下是一些了解其他专业研究人员对你刚阅读的文章的看法：方法之一是关注一篇论文的引文。引文是会涉及你高阅读的论文的其他学术论文，通常会进行讨论改进、调整或批评。可以使用谷歌学术帮助获得跟踪引用。</li>
+</ul>
+<p>学术研究的作者真的相信有效市场策略的存在吗？笔者认为学术研究人员非常重视EMH，不是因为这是一个可以和重力与运动定律一样坚不可摧的定律。相反，这是因为市场异常确实存在，但他需要一而再、再而三的仔细核实。一方面，由于各种历史、制度、法律、政治或经济原因造成的市场异常提供了获利的机会；另一方面，历史上有很多的投资者，将市场异常与风险因素混淆，并与因此付出了惨痛的代价。</p>
+<p>在金融报纸、会议、博客和数据库中，卖方分析师对企业和整个行业的研究都占有重要地位。在探究股价的大起大落时，分析师的荐股、调高评级、降低评级或修改目标价位被认为是主要原因的情况屡见不鲜。行业协会和学者间的大量研究发现，分析师研究中确实包含了大量重要信息。那么，一个对构建系统性市场策略有兴趣的研究员，为何要对测定公司级别的分析同样感兴趣呢？首先，有许多的研究是非常容易获取的。但是用户将无法通过公共资源获取所有的银行分析师公司研报，这是因为卖方分析师进行的是成本昂贵、过程复杂，并且耗时的分析，他们自然希望把分析先推荐给最有价值的客户。大部分分析师报告或市场评论专注于单一股票或行业，以下解释了为什么我们认为寻求系统性市场策略的研究人员可以从阅读股票分析报告中学习的原因：首先，比任何具体的买入或卖出推荐更重要的是分析师的思考过程。分析师作出判断，无论是何原因，一个有趣的问题是：我可以把它应用到其他公司吗？二，分析师通常在盈利电话会议期间提出非常好的问题。对于一位试图理解懈怠公司密集财务数据的新手研究员来说，这些问题可以帮上大忙。信息越多并不代表越好，特别是当每个公司都有二十多页财报的时候，试图把噪声和信号分开是个技术活。关注分析师聚焦的数据和趋势以及他们关注这些问题的目的，可以帮助我们了解关注哪些会计科目。我们关注的同样是其中是否具有普适性的逻辑，第三我们可以从股票分析师的工作中学习到很多方法论。例如不同行业的评估方法、每个行业可能都有自己独特的驱动力或衡量运营水平的指标，通常在分析报告中占据突出地位；分析师业报可以提供有效的交易信号。</p>
+<p>阅读分析师研报中的注意事项：正向偏见：学术研究人员认为，股票分析师作为一个群体可能会表现出正向偏见。比如说如果我们统计所有的分析师建议，可能就会发现，买入的建议比卖出的建议更多。羊群效应：羊群效应指分析师不希望其给出了公开建议和目标与市场上，其他分析师给出的太大不同。公开股票价格预测对分析师的职业发展有一定风险。在提他条件相同的情况下，跟随大多数人做出相同决定可能会更安全。同时更自信或生育更好的分析师，通常愿意做出与主流意见不同的决策建议。大多数的分析师可能有相同的信息来源，因此了解著名的分析时，为什么会得出与其他人不同的结论，他们的分析方法或数据来源有什么特殊性，如果可以，将其进行系统化，可能是一件很有趣的事。</p>
+<p>分析师的研究成果可以通过金融媒体获取；
+分析师在达成他们最终建议的过程中使用的方法和推理可能是阿尔法研究人员的灵感来源之一；
+分析师的建议目标价位可能会产生交易信号；
+正向偏见和羊群效应是需要注意的两个要点。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" title="《寻找阿尔法——量化交易策略》读书笔记整理" target="_blank" rel="external">https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">Bruce Zhou</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhoujb22" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://zhoujb22.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhoujb22" target="_blank"><span class="text-dark">Jinbo Zhou</span><small class="ml-1x">A Blog Space to link us</small></a></h3>
+        <div>Still Water Runs Deep~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://zhoujb22.github.io/2024/11/the-black-box--overview-and-theory-driven-alpha-models/" title="The Black Box -- Reading Notes"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter,linkedin"
+                data-mobile-sites="weibo,qq,wechat,facebook,twitter,linkedin"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/zhoujinbo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://zhoujb22.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+    <li><a href="https://twitter.com/Bruce050125" target="_blank" title="twitter" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-twitter"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2024  -
+    2025
+    
+    </div>
+    
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('\x3Cscript src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://zhoujb22.github.io/js/application.min.e4989ab4dc212027af8773861b05b6bc333a1217f6b0a1b3377a3a3dbd454483.js"></script>
+<script src="https://zhoujb22.github.io/js/plugin.min.353ef3573cf0beb9b69d43450140ff59f497f732396f539052fc4973c6330fdb.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/zhoujb22.github.io\/',
+            CONTENT_URL: 'https:\/\/zhoujb22.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://zhoujb22.github.io/js/insight.min.716b0c6a00b68ccc31a2b65345f3412f4246ffa94a90f8e25d525528b4504f9937880692bbe619023233caba5d0a17ebe23d7cfb57cd3a88f23ea337ad5e4d00.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23liZABQQKvLcdKdwk',
+        clientSecret: 'b378771d6e088f7adde390b10141d5795cc02002',
+        repo: 'Blog-Service',
+        owner: 'zhoujb22',
+        admin: ['zhoujb22'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>

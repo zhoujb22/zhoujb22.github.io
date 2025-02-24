@@ -7,10 +7,83 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Bruce Zhou</copyright>
-    <lastBuildDate>Sat, 02 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2025 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://zhoujb22.github.io/tags/quant-knowledge/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>《寻找阿尔法——量化交易策略》读书笔记整理</title>
+      <link>https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhoujb22.github.io/2025/01/%E5%AF%BB%E6%89%BE%E9%98%BF%E5%B0%94%E6%B3%95%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E7%AD%96%E7%95%A5%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</guid>
+      <description>&lt;h2 id=&#34;一阿尔法信号构建要求&#34;&gt;一、阿尔法信号构建要求&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基本特征&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;理论简洁且数学表达式简单&lt;/li&gt;
+&lt;li&gt;代码实现优雅&lt;/li&gt;
+&lt;li&gt;具有较高的夏普比率（风险调整后收益）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性要求&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;对数据和参数微调不敏感&lt;/li&gt;
+&lt;li&gt;适用于多股票池、多区域市场&lt;/li&gt;
+&lt;li&gt;能够持续创造新高利润&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;二阿尔法开发流程&#34;&gt;二、阿尔法开发流程&lt;/h2&gt;
+&lt;h3 id=&#34;迭代循环框架&#34;&gt;迭代循环框架&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;数据变量挖掘&lt;/li&gt;
+&lt;li&gt;变量变化建模&lt;/li&gt;
+&lt;li&gt;构建持仓量数学表达式&lt;/li&gt;
+&lt;li&gt;历史回测验证&lt;/li&gt;
+&lt;li&gt;通过验证则纳入信号池&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;三阿尔法生命周期规律&#34;&gt;三、阿尔法生命周期规律&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;市场博弈机制&lt;/strong&gt;：盈利策略吸引资金→策略容量饱和→收益摊薄→策略失效→新机会产生&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有效周期关键&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;历史验证时长&lt;/li&gt;
+&lt;li&gt;资金流入规模&lt;/li&gt;
+&lt;li&gt;市场结构变化速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;市场动态平衡&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;资金流动与策略有效性呈现周期性变化&lt;/li&gt;
+&lt;li&gt;新旧策略交替维持市场活力&lt;/li&gt;
+&lt;li&gt;阿尔法信号在市场演进中持续更新迭代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;四阿尔法评估体系&#34;&gt;四、阿尔法评估体系&lt;/h2&gt;
+&lt;h3 id=&#34;核心评价指标&#34;&gt;核心评价指标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;信息比率 = 每日损益均值 / 标准差&lt;/li&gt;
+&lt;li&gt;夏普比率（风险调整后收益）&lt;/li&gt;
+&lt;li&gt;最大回撤幅度&lt;/li&gt;
+&lt;li&gt;策略独特性（与其他信号相关性&amp;lt;0.1）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;回测验证要点&#34;&gt;回测验证要点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;样本外测试有效性高 and 样本内表现好&lt;/li&gt;
+&lt;li&gt;极端值对模型的破坏性检验&lt;/li&gt;
+&lt;li&gt;交易成本敏感性测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;五历史市场认知误区&#34;&gt;五、历史市场认知误区&lt;/h2&gt;
+&lt;h3 id=&#34;核心观点&#34;&gt;核心观点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;历史市场并非更易交易&lt;/li&gt;
+&lt;li&gt;过去赚钱同样具有挑战&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在去看历史，会觉得当时的市场比现在更加容易交易，这是因为如下几个原因第一，你当时不会有现在的领悟，第二你现在拥有之前无法得到的数据，第三，你当时没有现在这么强大的计算能力和技术，因此每个十年都有他自己的市场和独特的市场机会，这取决于阿尔法开发者是否能够有当时的技术数据寻找的市场机会。反观历史，诸如过去预测市场和赚钱更容易这样的想法是错误的。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>The Black Box -- Reading Notes</title>
